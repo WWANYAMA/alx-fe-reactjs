@@ -2,7 +2,6 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';  // ✅ import your new component
-import InlineComponent from './components/inlinecomponent'; // ✅ import the inline component
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         bio="Loves hiking and photography" 
       />
       <Footer />
-      <InlineComponent />  {/* ✅ use the inline component */}
     </div>
   );
 }
