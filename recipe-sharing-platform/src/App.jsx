@@ -1,18 +1,20 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AddRecipePage from './pages/AddRecipePage';
-import HomePage from './pages/HomePage'; // 
+import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail'; // Create this separately
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/add-recipe" element={<AddRecipePage />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
 
 
