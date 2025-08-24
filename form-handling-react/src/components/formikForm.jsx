@@ -4,20 +4,20 @@ import * as Yup from 'yup';
 
 const FormikForm = () => {
   const initialValues = {
-    username: '',
-    email: '',
-    password: '',
+    username: 'Warren Wanyama',
+    email: 'wwanyama04@gmail.com',
+    password: 'KultureAlx33',
   };
 
   const validationSchema = Yup.object({
     username: Yup.string().required('Username is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
+    email: Yup.string().email('Invalid email format').required('Email is required'),
     password: Yup.string().required('Password is required'),
   });
 
   const handleSubmit = (values) => {
     console.log('Formik Submission:', values);
-    // Simulate API call here
+    alert('Formik Form Submitted!');
   };
 
   return (
@@ -30,18 +30,21 @@ const FormikForm = () => {
         <div>
           <label>Username:</label>
           <Field type="text" name="username" />
-          <ErrorMessage name="username" component="p" />
+          <ErrorMessage name="username" component="p" style={{ color: 'red' }} />
         </div>
+
         <div>
           <label>Email:</label>
           <Field type="email" name="email" />
-          <ErrorMessage name="email" component="p" />
+          <ErrorMessage name="email" component="p" style={{ color: 'red' }} />
         </div>
+
         <div>
           <label>Password:</label>
           <Field type="password" name="password" />
-          <ErrorMessage name="password" component="p" />
+          <ErrorMessage name="password" component="p" style={{ color: 'red' }} />
         </div>
+
         <button type="submit">Register</button>
       </Form>
     </Formik>
@@ -49,3 +52,4 @@ const FormikForm = () => {
 };
 
 export default FormikForm;
+
